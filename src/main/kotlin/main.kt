@@ -3,23 +3,33 @@ fun main() {
     val amountPurchase = 17500
 
     val discount = 0
-    val regularDiscount = amountPurchase/100
+    val regularDiscount = amountPurchase / 100
     val discount1 = 100
-    val regularDiscount1 = (amountPurchase - discount1)/100
-    val discount2 = (amountPurchase/100)*5
-    val regularDiscount2 = (amountPurchase - discount2)/100
+    val regularDiscount1 = (amountPurchase - discount1) / 100
+    val discount2 = (amountPurchase / 100) * 5
+    val regularDiscount2 = (amountPurchase - discount2) / 100
+    var resultSumma = 0
+    var resultVipSumma = 0
+    var resultDiscount = 0
 
 
     if (amountPurchase >= 0 && amountPurchase <= 1000) {
-        if (regularCustomer === false) {
-            println("Сумма к оплате: ${amountPurchase - discount} руб. Скидка составила: $discount руб.")
-        } else println("Сумма к оплате: ${amountPurchase - discount - regularDiscount} руб. Скидка составила: ${discount + regularDiscount} руб.")
+        resultSumma = amountPurchase - discount
+        resultVipSumma = resultSumma - regularDiscount
+        resultDiscount = discount + regularDiscount
     } else if (amountPurchase >= 1001 && amountPurchase <= 10000) {
-        if (regularCustomer === false) {
-            println("Сумма к оплате: ${amountPurchase - discount1} руб. Скидка составила: $discount1")
-        } else println("Сумма к оплате: ${(amountPurchase - discount1) - regularDiscount1} руб. Скидка составила: ${discount1 + regularDiscount1} руб.")
-    } else if (regularCustomer === false) {
-        println("Сумма к оплате: ${amountPurchase - discount2} руб. Скидка составила: $discount2")
-    } else println("Сумма к оплате: ${(amountPurchase - discount2) - regularDiscount2} руб. Скидка составила: ${discount2 + regularDiscount2} руб.")
+        resultSumma = amountPurchase - discount1
+        resultVipSumma = resultSumma - regularDiscount1
+        resultDiscount = discount1 + regularDiscount1
+    } else {
+        resultSumma = amountPurchase - discount2
+        resultVipSumma = resultSumma - regularDiscount2
+        resultDiscount = discount2 + regularDiscount2
+    }
+
+    var result = if (regularCustomer === false) resultSumma else resultVipSumma
+
+
+    println("Сумма к оплате: $result руб. Скидка составила: $resultDiscount руб.")
 
 }
