@@ -6,14 +6,10 @@ fun main() {
     val minComissionInCop = minComissioninRub * kopInRub
     val comissionPercent = 0.75
     val percentSumm = amount / 100 * comissionPercent
+    var result = if (percentSumm < minComissionInCop) minComissionInCop else percentSumm.toInt()
 
-    if (percentSumm < minComissionInCop) {
-        println("Total comission from the amount of $summInRub was $minComissionInCop kop.")
-        println("Total comission from the amount of $summInRub was $minComissioninRub rub.")
-    } else {
-        println("Total comission from the amount of $summInRub was $percentSumm kop.")
-        println("Total comission from the amount of $summInRub was ${percentSumm / 100} rub.")
-    }
+    println("Total comission from the amount of $summInRub rub was $result kop.")
+
 
 
 }
