@@ -9,7 +9,7 @@
 
 <h4>Список задач:</br>
 1. CashAmount</br>
-2. Likes</br>
+2. Likes = likes</br>
 3. MusicLover</h4>
 
 </body>
