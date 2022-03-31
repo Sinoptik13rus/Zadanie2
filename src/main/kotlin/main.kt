@@ -1,10 +1,7 @@
 fun main() {
-    val likesNumber = 105
+    val likesNumber = 61
     val remainder = likesNumber % 10
+    val result = if (likesNumber % 100 == 11 || likesNumber % 10 != 1) "людям" else "человеку"
+    println("Понравилось $likesNumber $result")
 
-    if (remainder == 1) {
-        println("Понравилось $likesNumber человеку")
-    } else {
-        println("Понравилось $likesNumber людям")
-    }
 }
